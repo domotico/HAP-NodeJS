@@ -12,7 +12,7 @@ console.log("HAP-NodeJS starting...");
 storage.initSync();
 
 // Start by creating our Bridge which will host all loaded Accessories
-var bridge = new Bridge('Node Bridge', uuid.generate("Node Bridge"));
+var bridge = new Bridge('domoti.co', uuid.generate("domoti.co"));
 
 // Listen for bridge identification event
 bridge.on('identify', function(paired, callback) {
@@ -33,6 +33,6 @@ accessories.forEach(function(accessory) {
 bridge.publish({
   username: "CC:22:3D:E3:CE:F6",
   port: 51826,
-  pincode: "031-45-154",
+  pincode: "123-44-321",
   category: Accessory.Categories.OTHER
 });
