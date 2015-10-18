@@ -10,8 +10,8 @@ var RELAY_BOARD = {
   sp: null,
   powerOn1: false,
 //   brightness: 100, // percentage
-  
-  setPowerOn1: function(on) { 
+
+  setPowerOn1: function(on) {
     console.log("Turning the light %s!", on ? "on" : "off");
     RELAY_BOARD.powerOn1 = on;
     var cmd="ON";
@@ -87,13 +87,13 @@ light
   .getService(Service.Lightbulb)
   .getCharacteristic(Characteristic.On)
   .on('get', function(callback) {
-    
+
     // this event is emitted when you ask Siri directly whether your light is on or not. you might query
     // the light hardware itself to find this out, then call the callback. But if you take longer than a
     // few seconds to respond, Siri will give up.
-    
+
     var err = null; // in case there were any problems
-    
+
     if (RELAY_BOARD.powerOn1) {
       console.log("Are we on? Yes.");
       callback(err, true);
